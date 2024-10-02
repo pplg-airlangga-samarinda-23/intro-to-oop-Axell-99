@@ -1,29 +1,57 @@
 <?php
 class PersegiPanjang
 {
-    // deklarasikan panjang dan lebar
+    public $panjang;
+    public $lebar;
 
-
-    // deklarasikan metode konstruktor
-
-
-    // deklarasikan metode mutator dan asesor
-
-
-
-    public function hitungLuas()
+    // Konstruktor untuk menginisialisasi nilai panjang dan lebar saat objek dibuat untuk dinput
+    public function __construct($panjang, $lebar)
     {
-        // lengkapi kode untuk menghitung luas persegi panjang
-
+        $this->panjang = $panjang;
+        $this->lebar = $lebar;
     }
 
+    // Metode mutator (setter) untuk mengubah nilai panjang yg telah diberi nilai
+    public function setPanjang($panjang)
+    {
+        $this->panjang = $panjang;
+    }
+
+    // Metode mutator (setter) untuk mengubah nilai lebar 
+    public function setLebar($lebar)
+    {
+        $this->lebar = $lebar;
+    }
+
+    // Metode asesor (getter) untuk mendapatkan nilai panjang
+    public function getPanjang()
+    {
+        return $this->panjang;
+    }
+
+    // Metode asesor (getter) untuk mendapatkan nilai lebar
+    public function getLebar()
+    {
+        return $this->lebar;
+    }
+
+    // Metode untuk menghitung luas persegi panjang
+    public function hitungLuas()
+    {
+        return $this->panjang * $this->lebar;
+    }
+
+    // Metode untuk menghitung keliling persegi panjang
     public function hitungKeliling()
     {
-        // lengkapi dengan kode untuk menghitung keliling persegi panjang
-
+        return 2 * ($this->panjang + $this->lebar);
     }
 }
 
-$contoh = new PersegiPanjang(12, 20);
+// Membuat objek PersegiPanjang dengan panjang 12 dan lebar 20
+$contoh = new PersegiPanjang(819831, 912131);
+
+// Memanggil metode hitungLuas() dan hitungKeliling() dan menampilkan hasilnya
 echo "Luas Persegi Panjang: " . $contoh->hitungLuas() . "<br>";
 echo "Keliling Persegi Panjang: " . $contoh->hitungKeliling() . "<br>";
+?>
